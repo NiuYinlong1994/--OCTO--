@@ -22,5 +22,5 @@ func main() {
 	//2)将num的地址赋给指针ptr，并通过ptr去修改num的值
 	var ptr *int = &num
 	*ptr = 100
-	fmt.Println(*ptr, num)
+	fmt.Println(*ptr, num, ptr)
 }
