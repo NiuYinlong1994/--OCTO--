@@ -10,6 +10,7 @@ import (
 func main() {
 	var user, password string
 	var count int = 3
+	var times int = 3
 	for i := 1; i <= count; i++ {
 		fmt.Println("请输入账户: ")
 		fmt.Scanln(&user)
@@ -19,7 +20,12 @@ func main() {
 			fmt.Println("登录成功")
 			break
 		} else {
-			fmt.Printf("账户/密码输入错误,还有%v次机会\n", count-i)
+			times--
+			if times > 0 {
+				fmt.Printf("账户/密码输入错误,还有%v次机会\n", times)
+			} else {
+				fmt.Println("登陆失败")
+			}
 		}
 	}
 }
